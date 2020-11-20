@@ -4,6 +4,7 @@
 
 //PIN CONFIGURATION
 #ifndef LEDPIN
+//LEDPIN variable is ignored in multipin mod. configure strip number output PIN variables instead: STRIP1_PIN, STRIP2_PIN, etc.
 #define LEDPIN 2  //strip pin. Any for ESP32, gpio2 or 3 is recommended for ESP8266 (gpio2/3 are labeled D4/RX on NodeMCU and Wemos)
 #endif
 //#define USE_APA102  // Uncomment for using APA102 LEDs.
@@ -25,8 +26,8 @@
 //#define TOUCHPIN T0 //touch pin. Behaves the same as button. ESP32 only.
 #endif
 
-#ifndef IRPIN
-#define IRPIN  4  //infrared pin (-1 to disable)  MagicHome: 4, H801 Wifi: 0
+#ifndef IR_PIN
+#define IR_PIN -1 //infrared pin (-1 to disable)  MagicHome: 4, H801 Wifi: 0
 #endif
 
 #ifndef RLYPIN
@@ -142,7 +143,6 @@
 #endif
 
 //END calculations
-
 
 #if defined(USE_APA102) || defined(USE_WS2801) || defined(USE_LPD8806) || defined(USE_P9813)
  #ifndef CLKPIN
@@ -672,6 +672,7 @@ public:
         }
         #endif
       }
+      #endif
       break;
     } 
   }
@@ -679,7 +680,7 @@ public:
   void SetBrightness(byte b)
   {
     switch (_type) {
-        case NeoPixelType_Grb: { 
+        case NeoPixelType_Grb: {
         _pGrb->SetBrightness(b);     //strip1
         #if NUM_STRIPS > 1
           _pGrb2->SetBrightness(b);  //strip2
