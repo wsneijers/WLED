@@ -48,10 +48,11 @@
 #define COO_MAX   27 //not inclusive, this would set the override for LEDs 0-26
 #define COO_ORDER COL_ORDER_GRB
 
-// How many strips will be connected. currently up to 8 strips is possible.
-#define NUM_STRIPS 2
 
 // multipin mod configuration:
+
+// How many strips will be connected. currently up to 8 strips is possible.
+#define NUM_STRIPS 2
 
 // What pins to use:
 #define STRIP1_PIN 2 // manually specify all pins here.  2  is default LEDPIN for esp32dev boards.
