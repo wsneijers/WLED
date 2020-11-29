@@ -83,8 +83,6 @@
 #define STRIP7_PIXELMETHOD NeoEsp32Rmt6Ws2812xMethod
 #define STRIP8_PIXELMETHOD NeoEsp32Rmt7Ws2812xMethod
 
-
-
 //END CONFIGURATION
 
 // do calculations to find the  starting LED index position of each strip:
@@ -107,8 +105,6 @@
 #define STRIP6_ENDLED STRIP7_STARTLED - 1
 #define STRIP7_ENDLED STRIP8_STARTLED - 1
 #define STRIP8_ENDLED STRIP9_STARTLED - 1
-
-
 
 
 // find the total number of LEDs available in the physical system by reusing the math done above, then do strip 8 math
@@ -144,9 +140,7 @@
 #define NUM_LEDS STRIP9_STARTLED
 #endif
 
-
 //END calculations
-
 
 
 #if defined(USE_APA102) || defined(USE_WS2801) || defined(USE_LPD8806) || defined(USE_P9813)
@@ -521,7 +515,7 @@ public:
         #endif
         break;
       }
-            case NeoPixelType_Grbw:  {
+      case NeoPixelType_Grbw:  {
         _pGrbw->Show();     //strip1
         #if NUM_STRIPS > 1
           _pGrbw2->Show();  //strip2
