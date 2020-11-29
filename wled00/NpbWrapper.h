@@ -385,7 +385,6 @@ public:
           _pGrb8->Begin(); // strip8
         #endif
       #endif
-
       break;
 
       case NeoPixelType_Grbw:
@@ -423,7 +422,6 @@ public:
           _pGrbw8->Begin(); // strip8
         #endif
       #endif
-
       break;
     }
 
