@@ -42,8 +42,15 @@ Configure WLED as normal, make sure to set the WEB gui's LED quantity to match y
 
 Note: 8-pin is possible on ESP32. 2-pin is possible on ESP8622.  
 
-If using ESP8622 you must adjust the PIXELMETHOD params too.
+If using ESP8622 you must adjust the PIXELMETHOD params for the 2-pins you can use:
 ```
 STRIP1_PIXELMETHOD NeoEsp8266Uart1Ws2812xMethod
 STRIP2_PIXELMETHOD NeoEsp8266DmaWs2812xMethod
+```
+  
+Then configure /platformio.ini for your specific board type. Comment out the default_envs = esp32dev, and set default_envs to your board. 
+Example:  
+```
+; default_envs = esp32dev
+default_envs = d1_mini_ota
 ```
