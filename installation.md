@@ -24,14 +24,14 @@ From PlatformIO home, click "Open Project" Browse to the WLED code downloaded fr
 In the file: /wled00/NpbWrapper.h adjust these params to match your setup:
   
 ```
-NUM_STRIPS to the total # of pins you want to output on.
+NUM_STRIPS          # set this value to the total # of pins you want to output on
   
-STRIP1_PIN          #  set what GPIO pin to output on for each strip
-STRIP2_PIN          #  set what GPIO pin to output on for each strip
+STRIP1_PIN          # set what GPIO pin to output on for each strip
+STRIP2_PIN          #
 ...
   
-STRIP1_LEDCOUNT     # total leds on strip 1
-STRIP2_LEDCOUNT     # total leds on strip 2
+STRIP1_LEDCOUNT     # total leds attached to STRIP1's gpio pin
+STRIP2_LEDCOUNT     # total leds attached to STRIP2's gpio pin
 ...
    
 ```
