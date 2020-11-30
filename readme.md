@@ -1,3 +1,8 @@
+# MULTI PIN FORK - Install instructions here:
+
+https://github.com/peacepenguin/WLED/blob/master/installation.md
+
+
 <p align="center">
   <img src="/images/wled_logo_akemi.png">
   <a href="https://github.com/Aircoookie/WLED/releases"><img src="https://img.shields.io/github/release/Aircoookie/WLED.svg?style=flat-square"></a>
