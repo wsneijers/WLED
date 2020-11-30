@@ -54,3 +54,25 @@ Example:
 ; default_envs = esp32dev
 default_envs = d1_mini_ota
 ```
+  
+ADVANCED USAGE:
+  
+For mixed GRB / RGB strips on different pins. You need to adjust the color order for specific strips in the code itself.
+  
+Example to change only strip 4's color order from the default GRB that most common ws2812 led's operate at into RGB color order.
+  
+Find the strip 4 set color code in the NpbWrapper.h file:
+```
+_pGrb4->SetPixelColor((indexPixel -= STRIP4_STARTLED), RgbColor(col.R,col.G,col.B));
+```
+Change the color order after "RgbColor("
+
+From this:
+```
+RgbColor(col.R,col.G,col.B))
+```
+Into this:
+```
+RgbColor(col.G,col.R,col.B))
+```
+
