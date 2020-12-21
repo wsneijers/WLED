@@ -15,6 +15,8 @@
 #endif
 //#include "usermod_v2_empty.h"
 
+#include "../usermods/canbus_remote/canbus_remote_usermod.hpp"
+
 void registerUsermods()
 {
   /*
@@ -27,4 +29,6 @@ void registerUsermods()
   usermods.add(new UsermodTemperature());
   #endif
   //usermods.add(new UsermodRenameMe());
+
+  usermods.add(new CanbusRemoteUsermod());
 }
